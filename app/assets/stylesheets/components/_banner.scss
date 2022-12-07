@@ -1,0 +1,48 @@
+.banner-container{
+  position: relative;
+  background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ),  url('banner.jpeg');
+  height: 40vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+
+  h1{
+    font-size: 60px;
+    font-weight: 700;
+  }
+
+
+  ul{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  li{
+    padding: 10px 20px;
+    margin: 0 20px;
+    list-style-type: none;
+    border-radius: 15px;
+  }
+
+  .banner-nav-bar{
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.btn-my{
+  width: 110px;
+  background-color: #331A65;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover{
+  text-decoration: none;
+  color: inherit;
+}
