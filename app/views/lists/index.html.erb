@@ -1,11 +1,14 @@
-<div class="banner-container">
-  <div class="banner-nav-bar">
-    <h1><%= link_to 'Tracked', root_path %></h1>
-    <div>
-      <ul class="banner-ul">
-        <li class="btn-my"><%= link_to 'My lists', lists_path %></li>
-        <li class="btn-my"><%= link_to 'New list', new_list_path %></li>
-      </ul>
-    </div>
+<div class="container">
+  <div>
+    <h2>My lists</h2>
+    <p class="btn-create" style="width:250px"><%= link_to 'Create a new list', new_list_path %></p>
   </div>
+
+  <% @lists.each do |list| %>
+    <div class="card card-list">
+      <div class="card-body">
+        <h3 class="card-title"><%= link_to list.name, list %></h3>
+      </div>
+    </div>
+  <% end %>
 </div>

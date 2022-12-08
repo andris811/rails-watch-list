@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="movie-content">
+      <div>
+        <h2 class="movie-title"><%= @list.name %></h2>
+        <hr>
+        <div>
+          <p class="btn-create"><%= link_to "Add a movie to the list",  new_list_bookmark_path(@list) %></p>
+          <p><%= link_to "Change the list's name", edit_list_path(@list) %></p>
+          <p>
+            <%= link_to list_path(@list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+              <span>Delete list </span>
+              <i class="fa-solid fa-trash"></i>
+            <% end %>
+          </p>
+        </div>
+      </div>
+  </div>
+
+  <div class="movies-grid">
+    <% @list.movies.each do |movie| %>
+      <div class="box-poster">
+        <%#= image_tag movie.poster_url, class: 'img-poster'%>
+        <%= link_to movie_path(movie) do %>
+          <%= image_tag movie.poster_url, class: 'img-poster' %>
+        <% end %>
+        <p class="movie-path"><%= movie.title %></p>
+      </div>
+    <% end %>
+    <div>
+      <p class="btn-create"><%= link_to 'Back to my lists', lists_path %></p>
+    </div>
+  </div>
+</div>

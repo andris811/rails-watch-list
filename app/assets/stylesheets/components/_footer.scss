@@ -1,0 +1,30 @@
+.footer {
+  height: 70px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  background-color: black;
+  text-align: center;
+  // justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+  padding-top: 10px;
+}
+
+.fab{
+  text-align: center;
+  padding: 8px;
+}
+
+.social{
+  font-size: 20px;
+  color: $my-purple;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.social:hover{
+  color: yellow;
+}

@@ -1,0 +1,7 @@
+
+
+<%= simple_form_for [@list, @bookmark], defaults: { required: false } do |f| %>
+  <%= f.association :movie, label: "Which movie do you want to add to your list?" %>
+  <%= f.input :comment, placeholder: "Write some comments"%>
+  <%= f.submit class: 'btn-submit mt-3' %>
+<% end %>
