@@ -1,14 +1,18 @@
 <div class="container">
   <div>
     <h2>My lists</h2>
-    <p class="btn-create" style="width:250px"><%= link_to 'Create a new list', new_list_path %></p>
+    <%= link_to new_list_path do %>
+      <p class="btn-create" style="width:250px">Create a new list</p>
+    <% end %>
   </div>
 
   <% @lists.each do |list| %>
     <div class="card card-list">
-      <div class="card-body">
-        <h3 class="card-title"><%= link_to list.name, list %></h3>
-      </div>
+      <%= link_to list do %>
+        <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path list.photo.key, height: 300, crop: :fill %>')">
+          <h3 class="card-title"><%= list.name %></h3>
+        </div>
+      <% end %>
     </div>
   <% end %>
 </div>
