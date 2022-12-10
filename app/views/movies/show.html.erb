@@ -16,8 +16,10 @@
       <div>
         <p class="btn-create">Add this to my list</p>
       </div>
-      <div>
+      <div class="back">
         <%= link_to 'Back to movies', movies_index_path, class: 'btn-create' %>
+        <%#= link_to 'Back to list', :back, class: 'btn-create' %>
+        <%#= link_to "Back to list", request.referer.present? ? request.referer : default_path %>
       </div>
     </div>
   </div>
