@@ -17,17 +17,21 @@
   </div>
 
   <div class="movies-grid">
-    <% @list.movies.each do |movie| %>
+    <% @list.bookmarks.each do |bookmark| %>
       <div class="box-poster">
         <%#= image_tag movie.poster_url, class: 'img-poster'%>
-        <%= link_to movie_path(movie) do %>
-          <%= image_tag movie.poster_url, class: 'img-poster' %>
+        <%= link_to movie_path(bookmark.movie) do %>
+          <%= image_tag bookmark.movie.poster_url, class: 'img-poster' %>
         <% end %>
-        <p class="movie-path"><%= movie.title %></p>
+        <p class="movie-path"><%= bookmark.movie.title %></p>
+        <%= link_to "Delete",
+          bookmark_path(bookmark),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+        %>
       </div>
     <% end %>
-    <div>
+  </div>
+  <div>
       <p class="btn-create"><%= link_to 'Back to my lists', lists_path %></p>
-    </div>
   </div>
 </div>

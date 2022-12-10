@@ -1,4 +1,6 @@
-<%= simple_form_for(@list) do |f| %>
+
+
+<%= simple_form_for (@list), defaults: { required: false } do |f| %>
   <%= f.input :name, placeholder: 'Add a list name' %>
   <%= f.submit 'Create', class: 'btn btn-primary mt-2 mb-3' %>
 <% end %>
