@@ -1,5 +1,8 @@
 <div class="container">
   <div class="movie-content">
+  <div>
+    <%= cl_image_tag @list.photo.key, height: 200, width: 400, crop: :fill, class: 'img-border' %>
+  </div>
       <div>
         <h2 class="movie-title"><%= @list.name %></h2>
         <hr>
