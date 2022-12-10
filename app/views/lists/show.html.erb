@@ -4,14 +4,12 @@
         <h2 class="movie-title"><%= @list.name %></h2>
         <hr>
         <div>
-          <p class="btn-create"><%= link_to "Add a movie to the list",  new_list_bookmark_path(@list) %></p>
-          <p><%= link_to "Change the list's name", edit_list_path(@list) %></p>
-          <p>
-            <%= link_to list_path(@list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-              <span>Delete list </span>
-              <i class="fa-solid fa-trash"></i>
-            <% end %>
-          </p>
+          <%= link_to "Add a movie to the list",  new_list_bookmark_path(@list), class: 'btn-create' %>
+          <%= link_to "Change the list's name", edit_list_path(@list), class: 'btn-create' %>
+          <%= link_to list_path(@list), class:'btn-create', data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+            <span>Delete list </span>
+            <i class="fa-solid fa-trash"></i>
+          <% end %>
         </div>
       </div>
   </div>
@@ -19,19 +17,18 @@
   <div class="movies-grid">
     <% @list.bookmarks.each do |bookmark| %>
       <div class="box-poster">
-        <%#= image_tag movie.poster_url, class: 'img-poster'%>
         <%= link_to movie_path(bookmark.movie) do %>
           <%= image_tag bookmark.movie.poster_url, class: 'img-poster' %>
         <% end %>
         <p class="movie-path"><%= bookmark.movie.title %></p>
-        <%= link_to "Delete",
-          bookmark_path(bookmark),
-          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-        %>
+        <p class="movie-path"><%= bookmark.comment %></p>
+        <%= link_to bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+          <i class="fa-solid fa-trash"></i>
+        <% end %>
       </div>
     <% end %>
   </div>
   <div>
-      <p class="btn-create"><%= link_to 'Back to my lists', lists_path %></p>
+      <%= link_to 'Back to my lists', lists_path, class: 'btn-create' %>
   </div>
 </div>
