@@ -1,0 +1,6 @@
+<div class="search">
+    <%= simple_form_for :search, url: movies_index_path, method: "GET", html: { class: 'form-inline' }, defaults: { required: false } do |f| %>
+      <%= f.input :search, label: false, input_html: {value: ""}, style: 'display: inline' %>
+      <%= f.submit "Search", class: "btn btn-create", style: 'display: inline' %>
+    <% end %>
+  </div>

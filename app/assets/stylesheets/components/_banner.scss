@@ -1,5 +1,5 @@
 .banner-container{
-  position: relative;
+  // position: relative;
   background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ),  url('banner.jpeg');
   height: 40vh;
   background-position: center;
@@ -50,4 +50,10 @@ a:hover{
   text-decoration: none;
   color: inherit;
   transition: 0.3s;
+}
+
+.search{
+  margin: auto;
+  width: 300px;
+  // justify-content: space-between;
 }
