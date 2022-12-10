@@ -12,17 +12,12 @@
     font-weight: 700;
   }
 
-
-  ul{
-    display: flex;
-    justify-content: space-between;
-  }
-
   li{
     padding: 10px 20px;
     margin: 0 20px;
     list-style-type: none;
     border-radius: 10px;
+    align-items: center;
   }
 
   .banner-nav-bar{

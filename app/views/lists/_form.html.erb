@@ -2,6 +2,6 @@
 
 <%= simple_form_for (@list), defaults: { required: false } do |f| %>
   <%= f.input :name, placeholder: 'Add a list name' %>
-  <%= f.input :photo, as: :file %>
+  <%= f.input :photo, as: :file, label: 'Upload a cover photo for the album' %>
   <%= f.submit 'Create', class: 'btn-create mt-2 mb-3' %>
 <% end %>
